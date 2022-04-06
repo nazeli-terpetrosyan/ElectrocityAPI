@@ -1,0 +1,7 @@
+fastapi
+starlette
+gunicorn
+uvicorn
+numpy
+python-multipart
+pandas
