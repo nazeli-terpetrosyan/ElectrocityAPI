@@ -5,6 +5,7 @@ from starlette.responses import RedirectResponse
 
 import numpy as np
 import pandas as pd
+import tensorflow as tf
 
 app_desc = """<h2>Electrocity API</h2>"""
 
@@ -20,14 +21,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+model = tf.keras.models.load_model('LSTM_model')
+
 @app.get("/", include_in_schema=False)
 async def index():
     return RedirectResponse(url="/docs") 
 
-@app.post("/size/IOS")
-async def predict_api(prev: str, max_temp: int=16, humidity: int=160, wind_speed: int = 30):
-    hi = prev
-    return hi
+@app.post("/predict")
+async def predict(prev: str, max_temp: int=16, humidity: int=160, wind_speed: int = 30):
+    prev = prev.split(",")
+
+    return model.summary()
 
 
 if __name__ == "__main__":
