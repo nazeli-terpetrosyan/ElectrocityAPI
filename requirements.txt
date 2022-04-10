@@ -6,3 +6,5 @@ numpy
 python-multipart
 pandas
 tensorflow
+scikit-learn
+joblib
