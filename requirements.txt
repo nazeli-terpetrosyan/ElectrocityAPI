@@ -4,6 +4,6 @@ gunicorn
 uvicorn
 numpy
 python-multipart
-tensorflow
+tensorflow-cpu
 scikit-learn
 joblib
