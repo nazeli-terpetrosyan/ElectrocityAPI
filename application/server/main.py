@@ -25,7 +25,7 @@ app.add_middleware(
 )
 
 with open('lstm.json', 'r') as json_file:
-    json_savedModel= json_file.read())
+    json_savedModel= json_file.read()
 model = tf.keras.models.model_from_json(json)
 model.load_weights('./weights.h5')
 scaler = joblib.load("./scaler.save")
