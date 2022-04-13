@@ -7,3 +7,4 @@ python-multipart
 tensorflow-cpu
 scikit-learn
 joblib
+pandas
