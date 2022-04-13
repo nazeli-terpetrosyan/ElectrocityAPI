@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-with open('./model.json', 'r') as json_file:
+with open('model.json', 'r') as json_file:
     json_savedModel= json_file.read()
 model = tf.keras.models.model_from_json(json_savedModel)
 model.load_weights('./weights.h5')
