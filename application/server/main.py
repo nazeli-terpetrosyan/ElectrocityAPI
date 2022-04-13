@@ -8,6 +8,7 @@ import numpy as np
 import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler
 import joblib
+import json
 
 app_desc = """<h2>Electrocity API</h2>"""
 
@@ -23,9 +24,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-with open('model.json', 'r') as json_file:
-    json_savedModel= json_file.read()
-model = tf.keras.models.model_from_json(json_savedModel)
+# with open('model.json', 'r') as json_file:
+#     json_savedModel= json_file.read()
+f = open('model.json')
+json = json.load(f)
+model = tf.keras.models.model_from_json(json)
 model.load_weights('./weights.h5')
 scaler = joblib.load("./scaler.save")
 
