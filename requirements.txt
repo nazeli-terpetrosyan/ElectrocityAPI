@@ -4,7 +4,3 @@ gunicorn
 uvicorn
 numpy
 python-multipart
-tensorflow-cpu
-scikit-learn
-joblib
-pandas
